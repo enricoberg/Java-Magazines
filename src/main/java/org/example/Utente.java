@@ -17,7 +17,7 @@ public class Utente {
 
     @Override
     public String toString() {
-        return "Utente = {" +
+        return "{" +
                 "ID=" + ID +
                 ", DocID=" + DocID +
                 ", Nome='" + Nome + '\'' +

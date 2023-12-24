@@ -16,7 +16,7 @@ public class Rivista {
 
     @Override
     public String toString() {
-        return "Rivista ={" +
+        return "{" +
                 "ID=" + ID +
                 ", Nome='" + Nome + '\'' +
                 ", Descrizione='" + Descrizione + '\'' +

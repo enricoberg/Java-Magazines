@@ -1,14 +1,14 @@
 package org.example;
-import java.time.LocalDate;
 import java.io.FileReader;
 import com.opencsv.CSVReader;
 import java.util.ArrayList;
 public class ReadRivista {
+    public ArrayList<Rivista> rivistaList = new ArrayList<>();
     public ReadRivista(String filename){
         CSVReader reader = null;
         try
         {
-            ArrayList<Rivista> rivistaList = new ArrayList<>();
+
             reader = new CSVReader(new FileReader(filename));
             String [] nextLine;
             boolean isFirstLine = true;
@@ -35,11 +35,20 @@ public class ReadRivista {
 
                 }
             }
-            System.out.println("Riviste.csv read correctly");
+            //System.out.println("Riviste.csv read correctly");
         }
         catch (Exception e)
         {
             e.printStackTrace();
         }
+    }
+
+
+    @Override
+    public String toString() {
+        for (Rivista riv : rivistaList) {
+            System.out.println(riv.toString());
+        }
+        return null;
     }
 }

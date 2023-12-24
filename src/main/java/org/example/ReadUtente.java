@@ -5,11 +5,12 @@ import java.io.FileReader;
 import com.opencsv.CSVReader;
 import java.util.ArrayList;
 public class ReadUtente {
+    public ArrayList<Utente> utenteList = new ArrayList<>();
     public ReadUtente(String filename){
         CSVReader reader = null;
         try
         {
-            ArrayList<Utente> utenteList = new ArrayList<>();
+
             reader = new CSVReader(new FileReader(filename));
             String [] nextLine;
             boolean isFirstLine = true;
@@ -34,7 +35,7 @@ public class ReadUtente {
 
                 }
             }
-            System.out.println("Abbonamenti.csv read correctly");
+            //System.out.println("Abbonamenti.csv read correctly");
         }
         catch (Exception e)
         {

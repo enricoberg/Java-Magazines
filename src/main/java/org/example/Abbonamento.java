@@ -16,7 +16,7 @@ public class Abbonamento {
 
     @Override
     public String toString() {
-        return "Abbonamento= {" +
+        return "{" +
                 "id_abbonamento=" + id_abbonamento +
                 ", id_rivista=" + id_rivista +
                 ", id_utente=" + id_utente +
@@ -28,6 +28,10 @@ public class Abbonamento {
     public int getId_abbonamento() {
         return id_abbonamento;
     }
+
+    public LocalDate getData_inizio() { return data_inizio;}
+
+    public LocalDate getData_fine() { return data_fine;}
 
     public void setId_abbonamento(int id_abbonamento) {
         this.id_abbonamento = id_abbonamento;
