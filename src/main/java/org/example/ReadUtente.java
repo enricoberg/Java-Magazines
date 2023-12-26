@@ -1,17 +1,22 @@
 package org.example;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.time.LocalDate;
 import java.io.FileReader;
-import com.opencsv.CSVReader;
+import com.opencsv.*;
 import java.util.ArrayList;
 public class ReadUtente {
     public ArrayList<Utente> utenteList = new ArrayList<>();
-    public ReadUtente(String filename){
+    private String filename= Main.PathOf("utenti.csv");
+    public ReadUtente(){
+
         CSVReader reader = null;
         try
         {
-
-            reader = new CSVReader(new FileReader(filename));
+            CSVParser parser = new CSVParserBuilder().withSeparator(';').build();
+            reader = new CSVReaderBuilder(new FileReader(filename)).withCSVParser(parser).build();
             String [] nextLine;
             boolean isFirstLine = true;
             while ((nextLine = reader.readNext()) != null) {
@@ -42,4 +47,26 @@ public class ReadUtente {
             e.printStackTrace();
         }
     }
+    public boolean update(){
+        String file_content="ID;Nome;Cognome;Nascita;Indirizzo;DocID";
+        for(Utente user : utenteList){
+            String newLine= "\n"+ user.getID() + ";" + user.getNome()+ ";" + user.getCognome() + ";" + user.getNascita().toString() +";" + user.getIndirizzo()+";" + user.getDocID();
+            file_content+=newLine;
+        }
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filename))) {
+            writer.write(file_content);
+            return true;
+        } catch (IOException e) {
+            //e.printStackTrace();
+            return false;
+        }
+    }
+    public int getLatestId(){
+        int max=0;
+        for(Utente us: utenteList){
+            if (us.getID()>=max) max= us.getID();
+        }
+        return max;
+    }
+
 }

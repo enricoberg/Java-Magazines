@@ -1,15 +1,21 @@
 package org.example;
+import java.io.BufferedWriter;
 import java.io.FileReader;
-import com.opencsv.CSVReader;
+import com.opencsv.*;
+
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 public class ReadRivista {
     public ArrayList<Rivista> rivistaList = new ArrayList<>();
-    public ReadRivista(String filename){
+    private String filename= Main.PathOf("riviste.csv");
+    public ReadRivista(){
+
         CSVReader reader = null;
         try
         {
-
-            reader = new CSVReader(new FileReader(filename));
+            CSVParser parser = new CSVParserBuilder().withSeparator(';').build();
+            reader = new CSVReaderBuilder(new FileReader(filename)).withCSVParser(parser).build();
             String [] nextLine;
             boolean isFirstLine = true;
             while ((nextLine = reader.readNext()) != null) {
@@ -50,5 +56,20 @@ public class ReadRivista {
             System.out.println(riv.toString());
         }
         return null;
+    }
+
+    public boolean update(){
+        String file_content="ID;Nome;Descrizione;Prezzo;Tipologia;Disponibile";
+        for(Rivista riv : rivistaList){
+            String newLine= "\n"+ riv.getID() + ";" + riv.getNome()+ ";" + riv.getDescrizione() + ";" + riv.getPrezzo() +";" + riv.getTipologia()+";" +riv.getDisponibile();
+            file_content+=newLine;
+        }
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filename))) {
+            writer.write(file_content);
+            return true;
+        } catch (IOException e) {
+            //e.printStackTrace();
+            return false;
+        }
     }
 }

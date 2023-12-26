@@ -1,28 +1,31 @@
-
 package org.example;
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.nio.file.Path;
+import java.time.LocalDate;
 import java.nio.file.Paths;
 import java.util.Scanner;
 
 public class Main {
+    public int obsoleteMagazine=0;
     public static void main(String[] args){
+
         // INSTANTIATE OBJECTS FROM THE FILES
-        ReadAbbonamento abb = new ReadAbbonamento(PathOf("abbonamenti.csv"));
-        ReadRivista riv = new ReadRivista(PathOf("riviste.csv"));
-        ReadUtente users = new ReadUtente(PathOf("utenti.csv"));
+
         Scanner scanner = new Scanner(System.in);
         System.out.println("Welcome to Magazine Administration System.");
         while(true) {
-            System.out.println("Please press:\n-1 to view all magazines\n-0 to exit the program");
+            System.out.println("Please press:\n-1 to view all magazines\n-2 to subscribe to an existing magazine\n-3 to cancel a subscription\n-4 to add new user\n-0 to exit the program");
             String choice = scanner.nextLine();
             switch (choice) {
                 case ("1"):
-                    Query.getAllSubscriptions(abb,riv,users);
+                    Query.getAllSubscriptions();
+                    break;
+                case("2"):
+                    Query.subscribe();
+                    break;
+                case("3"):
+                    Query.unsubscribe();
+                    break;
+                case("4"):
+                    Query.addUser();
                     break;
                 case ("0"):
                     System.out.println("Exiting...");
@@ -41,4 +44,5 @@ public class Main {
         resourcePath= Paths.get(System.getProperty("user.dir"), resourcePath).normalize().toString();
         return resourcePath;
     }
+
 }

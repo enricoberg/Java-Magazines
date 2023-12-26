@@ -1,4 +1,5 @@
 package org.example;
+import javax.xml.crypto.Data;
 import java.time.LocalDate;
 public class Utente {
 
@@ -14,6 +15,7 @@ public class Utente {
         Indirizzo=indirizzo_utente;
         Nascita=nascita_utente;
     }
+
 
     @Override
     public String toString() {
