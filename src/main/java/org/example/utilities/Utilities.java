@@ -10,6 +10,7 @@ public class Utilities {
             if (input != null && !input.isEmpty()) return input;
             else System.out.println("Invalid string, please try again: ");
         }
+        
     }
     public static int ValidatedUserInteger() {
         Scanner scanner = new Scanner(System.in);
