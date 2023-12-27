@@ -1,17 +1,21 @@
 package org.example;
-
+import java.time.LocalDate;
 public class Rivista {
     private int ID;
-    private String Nome,Descrizione,Tipologia,Disponibile;
+    private String Nome,Descrizione,Tipologia,Disponibile,Taglia,Marca;
     private double Prezzo;
+    private LocalDate Inserimento;
 
-    public Rivista(int ID_rivista,String Nome_rivista,String Descrizione_rivista, double Prezzo_rivista, String Tipologia_rivista, String Disponibile_rivista){
+    public Rivista(int ID_rivista,String Nome_rivista,String Descrizione_rivista, double Prezzo_rivista, String Tipologia_rivista, String Disponibile_rivista, LocalDate data_inserimento,String size, String brand){
         ID=ID_rivista;
         Nome=Nome_rivista;
         Descrizione=Descrizione_rivista;
         Tipologia=Tipologia_rivista;
         Disponibile=Disponibile_rivista;
         Prezzo=Prezzo_rivista;
+        Inserimento=data_inserimento;
+        Taglia=size;
+        Marca=brand;
     }
 
     @Override
@@ -23,6 +27,8 @@ public class Rivista {
                 ", Tipologia='" + Tipologia + '\'' +
                 ", Disponibile='" + Disponibile + '\'' +
                 ", Prezzo=" + Prezzo +
+                ", Data inserimento= '" + Inserimento + '\'' +
+                ", Taglia='" + Taglia + '\'' +
                 '}';
     }
 
@@ -34,12 +40,20 @@ public class Rivista {
         this.ID = ID;
     }
 
+    public String getMarca() {
+        return Marca;
+    }
+
     public String getNome() {
         return Nome;
     }
 
     public void setNome(String nome) {
         Nome = nome;
+    }
+
+    public String getTaglia() {
+        return Taglia;
     }
 
     public String getDescrizione() {
@@ -69,6 +83,8 @@ public class Rivista {
     public double getPrezzo() {
         return Prezzo;
     }
+
+    public LocalDate getInserimento() { return Inserimento;}
 
     public void setPrezzo(double prezzo) {
         Prezzo = prezzo;

@@ -12,7 +12,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Welcome to Magazine Administration System.");
         while(true) {
-            System.out.println("Please press:\n-1 to view all magazines\n-2 to subscribe to an existing magazine\n-3 to cancel a subscription\n-4 to add new user\n-0 to exit the program");
+            System.out.println("Please press:\n-1 to view all magazines\n-2 to subscribe to an existing magazine\n-3 to cancel a subscription\n-4 to add new user\n-5 to export available magazines list in CSV\n-0 to exit the program");
             String choice = scanner.nextLine();
             switch (choice) {
                 case ("1"):
@@ -26,6 +26,9 @@ public class Main {
                     break;
                 case("4"):
                     Query.addUser();
+                    break;
+                case("5"):
+                    Query.ExportCSV();
                     break;
                 case ("0"):
                     System.out.println("Exiting...");

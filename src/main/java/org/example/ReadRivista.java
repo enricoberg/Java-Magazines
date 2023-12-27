@@ -2,6 +2,7 @@ package org.example;
 import java.io.BufferedWriter;
 import java.io.FileReader;
 import com.opencsv.*;
+import java.time.LocalDate;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -31,9 +32,12 @@ public class ReadRivista {
                     double prezzo= Double.parseDouble(nextLine[3]);
                     String tipologia = nextLine[4];
                     String disponibile = nextLine[5];
+                    LocalDate inserimento = LocalDate.parse(nextLine[6]);
+                    String taglia = nextLine[7];
+                    String marca=nextLine[8];
 
 
-                    Rivista newRivista = new Rivista(ID,nome, descrizione, prezzo, tipologia, disponibile);
+                    Rivista newRivista = new Rivista(ID,nome, descrizione, prezzo, tipologia, disponibile,inserimento,taglia,marca);
                     rivistaList.add(newRivista);
 
 
@@ -59,9 +63,9 @@ public class ReadRivista {
     }
 
     public boolean update(){
-        String file_content="ID;Nome;Descrizione;Prezzo;Tipologia;Disponibile";
+        String file_content="ID;Nome;Descrizione;Prezzo;Tipologia;Disponibile;Inserimento;Taglia;Marca";
         for(Rivista riv : rivistaList){
-            String newLine= "\n"+ riv.getID() + ";" + riv.getNome()+ ";" + riv.getDescrizione() + ";" + riv.getPrezzo() +";" + riv.getTipologia()+";" +riv.getDisponibile();
+            String newLine= "\n"+ riv.getID() + ";" + riv.getNome()+ ";" + riv.getDescrizione() + ";" + riv.getPrezzo() +";" + riv.getTipologia()+";" +riv.getDisponibile()+";" +riv.getInserimento().toString()+";" +riv.getTaglia()+";" +riv.getMarca();
             file_content+=newLine;
         }
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filename))) {

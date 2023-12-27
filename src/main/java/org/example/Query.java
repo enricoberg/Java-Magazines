@@ -1,6 +1,10 @@
 package org.example;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.time.temporal.ChronoUnit;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 
@@ -161,5 +165,27 @@ public class Query {
             if (i.getID()==id) i.setDisponibile("No");
         }
         return riv;
+    }
+    public static void ExportCSV(){
+        String file_content="ID;Inserimento;Tipologia;Marca;Taglia;Prezzo";
+        for(Rivista riv : Database.riv.rivistaList){
+            //SKIP ALL NOT AVAILABLE MAGAZINES
+            if(!riv.getDisponibile().equals("Si")) continue;
+            //CREATE NEW LINE FOR EACH AVAILABLE MAGAZINE
+            String newLine= "\n"+ riv.getID() + ";" + riv.getInserimento().toString()+ ";" + riv.getTipologia() + ";" + riv.getMarca() +";" + riv.getTaglia()+";" +riv.getPrezzo();
+            file_content+=newLine;
+        }
+        LocalDate currentDate = LocalDate.now();
+        // Format the current date in desired format
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd_MM_yyyy");
+        String formattedDate = currentDate.format(formatter);
+        String filename=Main.PathOf("exports/riviste_"+ formattedDate + ".csv");
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filename))) {
+            writer.write(file_content);
+            System.out.println("Export completed successfully. Filename= riviste_" + formattedDate + ".csv");
+        } catch (IOException e) {
+            //e.printStackTrace();
+            System.out.println("Error exporting the CSV");
+        }
     }
 }
