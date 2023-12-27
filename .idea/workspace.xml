@@ -1,15 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="Java-Information:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4273c265-ed9f-4347-ae7a-f9c673309a87" name="Changes" comment="Added functions to subscribe,unsubscribe and add user">
+    <list default="true" id="4273c265-ed9f-4347-ae7a-f9c673309a87" name="Changes" comment="Added function to export CSV">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/Java_Information_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/Controller.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/utilities/Utilities.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Abbonamento.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Database.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Query.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Query.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ReadRivista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ReadRivista.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Rivista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Rivista.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Query.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ReadRivista.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ReadUtente.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Rivista.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Utente.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +64,9 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
@@ -94,7 +111,9 @@
       <workItem from="1703405970148" duration="7691000" />
       <workItem from="1703579646126" duration="7539000" />
       <workItem from="1703617238959" duration="6281000" />
-      <workItem from="1703667826682" duration="4489000" />
+      <workItem from="1703667826682" duration="5114000" />
+      <workItem from="1703673674570" duration="4748000" />
+      <workItem from="1703687971944" duration="9454000" />
     </task>
     <task id="LOCAL-00001" summary="Created classes to read all the CSVs">
       <option name="closed" value="true" />
@@ -120,7 +139,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703623513067</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added function to export CSV">
+      <option name="closed" value="true" />
+      <created>1703673000609</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1703673000609</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -130,21 +157,7 @@
     <MESSAGE value="Created classes to read all the CSVs" />
     <MESSAGE value="Added functionality to view all subscriptions with command 1" />
     <MESSAGE value="Added functions to subscribe,unsubscribe and add user" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added functions to subscribe,unsubscribe and add user" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Query.java</url>
-          <line>97</line>
-          <properties class="org.example.Query" method="unsubscribe">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Added function to export CSV" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added function to export CSV" />
   </component>
 </project>
