@@ -1,6 +1,9 @@
 package org.example;
+
 import java.nio.file.Paths;
+
 import org.example.controller.Controller;
+
 public class Main {
 
     public static void main(String[] args) {
