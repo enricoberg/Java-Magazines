@@ -73,7 +73,7 @@ The requisites for the development of the app:
 
   
 
-![JAVA LOGO](https://img.shields.io/badge/100%-JAVA-777BB4)
+![100% ](https://img.shields.io/badge/100%25-JAVA-violet?style=for-the-badge)
 
   
   
