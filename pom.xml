@@ -14,13 +14,17 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     <dependencies>
-        <!-- Other dependencies -->
+        
         <dependency>
             <groupId>com.opencsv</groupId>
             <artifactId>opencsv</artifactId>
             <version>5.7.1</version>
         </dependency>
     </dependencies>
+    <build>
+    <directory>out</directory>
+    <finalName>Java-Information</finalName>
+    </build>
 
 
 </project>
