@@ -111,7 +111,7 @@ First you need to [have JAVA installed.](https://www.java.com/it/download/help/w
 
 If you want to simply try the application:
 
- - Download the JAR File
+ - Build the JAR File
  - Download the abbonamenti.csv , utenti.csv and riviste.csv files.
  - Place all the above inside a folder and run the JAR file from a terminal:
 ```xml
