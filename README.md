@@ -213,7 +213,7 @@ You can change the destination by changing the filename and directory inside the
 
 </build>
 ```
-Now simply place the csv files inside the out folder and from here open a terminal and write:
+Now simply place the csv files inside the folder where you have placed the jar file and from here open a terminal and write:
 ```xml
 java -jar Java-Information-jar-with-dependencies.jar
 ```
