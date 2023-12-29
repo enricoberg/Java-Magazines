@@ -1,4 +1,4 @@
-
+  
   
 
 
@@ -170,7 +170,8 @@ Java classes are grouped in folders separating Models and Controllers, plus an e
 pom.xml is an XML file that contains information about the project and configuration details used by Maven to build the project.
 
 ### Building
-To compile and run the application you need an IDE, I personally use [IntelliJ IDEA.](https://www.jetbrains.com/idea/download/?section=windows)
+##### Build with IDE
+To compile and run the application I personally use an IDE for simplicity, specifically  [IntelliJ IDEA.](https://www.jetbrains.com/idea/download/?section=windows)
 To import a Maven project from IntelliJ you can follow [this detailed guide.](https://www.jetbrains.com/guide/java/tutorials/working-with-maven/importing-a-project/)
 To create the JAR file from within the project,
 ```xml
@@ -188,6 +189,39 @@ File > Build > Build Artifacts... > Build
 ```
 And the JAR file will be exported in the selected folder. 🎉
 Remember to add the CSV to the folder in which you'll use the JAR 😊  
+Now to launch the app, open a terminal within the Jar folder and type:
+```xml
+java -jar Java-Information.jar
+```
+Note: change to your actual jar file name.
+#### Build from command line
+If you want to build from command line, first make sure you have [Maven installeed.](https://maven.apache.org/install.html)
+Now open the the folder of the project with the terminal.
+Type:
+```xml
+mvn clean compile
+```
+Then 
+```xml
+mvn package
+```
+The JAR file will be generated inside the **out/**  folder with name **"Java-Information.jar"**.
+You can change the destination by changing the filename and directory inside the build tag in the pom.xml
+```xml
+<build>
+
+<directory>out</directory>
+
+<finalName>Java-Information</finalName>
+
+</build>
+```
+Now simply place the csv files inside the out folder and from here open a terminal and write:
+```xml
+java -jar Java-Information.jar
+```
+
+
 
 ## Contributing
 
