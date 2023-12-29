@@ -183,9 +183,9 @@ JAR > From modules with dependencies
 ```xml
 Select the Main class as entry point for the app and Apply
 ```
-Now go to 
+Now, from the toolbar go to 
 ```xml
-File > Build > Build Artifacts... > Build
+Build > Build Artifacts... > Build
 ```
 And the JAR file will be exported in the selected folder. 🎉
 Remember to add the CSV to the folder in which you'll use the JAR 😊  
