@@ -199,13 +199,10 @@ If you want to build from command line, first make sure you have [Maven installe
 Now open the the folder of the project with the terminal.
 Type:
 ```xml
-mvn clean compile
+mvn clean compile assembly:single
 ```
-Then 
-```xml
-mvn package
-```
-The JAR file will be generated inside the **out/**  folder with name **"Java-Information.jar"**.
+
+The JAR file will be generated inside the **out/**  folder with name **"Java-Information-jar-with-dependencies.jar"**.
 You can change the destination by changing the filename and directory inside the build tag in the pom.xml
 ```xml
 <build>
@@ -218,7 +215,7 @@ You can change the destination by changing the filename and directory inside the
 ```
 Now simply place the csv files inside the out folder and from here open a terminal and write:
 ```xml
-java -jar Java-Information.jar
+java -jar Java-Information-jar-with-dependencies.jar
 ```
 
 
