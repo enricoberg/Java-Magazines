@@ -1,15 +1,13 @@
 package org.example.models;
-import java.io.BufferedWriter;
 import java.io.FileReader;
 import com.opencsv.*;
 import java.time.LocalDate;
-import org.example.Main;
-import java.io.FileWriter;
+import org.example.utilities.Utilities;
 import java.io.IOException;
 import java.util.ArrayList;
 public class ReadRivista {
     public ArrayList<Rivista> rivistaList = new ArrayList<>();
-    private String filename= Main.PathOf("riviste.csv");
+    private String filename= Utilities.PathOf("riviste.csv");
     public ReadRivista(){
 
         CSVReader reader = null;
@@ -24,7 +22,7 @@ public class ReadRivista {
                     isFirstLine = false;
                     continue; // Skip the first line (headers)
                 }
-                if (nextLine.length >= 5) { // Ensure the line has at least 5 values
+                if (nextLine.length >= 5) {
 
                     int ID = Integer.parseInt(nextLine[0]);
                     String nome = nextLine[1];
@@ -45,7 +43,7 @@ public class ReadRivista {
 
                 }
             }
-            //System.out.println("Riviste.csv read correctly");
+            reader.close();
         }
         catch (Exception e)
         {
@@ -68,11 +66,12 @@ public class ReadRivista {
             String newLine= "\n"+ riv.getID() + ";" + riv.getNome()+ ";" + riv.getDescrizione() + ";" + riv.getPrezzo() +";" + riv.getTipologia()+";" +riv.getDisponibile()+";" +riv.getInserimento().toString()+";" +riv.getTaglia()+";" +riv.getMarca();
             file_content+=newLine;
         }
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filename))) {
-            writer.write(file_content);
+        try{
+            Utilities.write(file_content,filename);
             return true;
-        } catch (IOException e) {
-            //e.printStackTrace();
+        }
+        catch(IOException e){
+            e.printStackTrace();
             return false;
         }
     }

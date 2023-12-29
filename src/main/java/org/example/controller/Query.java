@@ -1,5 +1,4 @@
 package org.example.controller;
-
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -8,8 +7,6 @@ import java.time.temporal.ChronoUnit;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
-
-import org.example.Main;
 import org.example.models.*;
 import org.example.utilities.Utilities;
 
@@ -124,6 +121,7 @@ public class Query {
                 }
 
             }
+            System.out.println("Subscription successfully cancelled!");
             if (!found) System.out.println("Sorry, the subscription you want to cancel does not exist..");
         } catch (Exception e) {
             System.out.println("Something went wrong canceling the subscription..");
@@ -150,8 +148,12 @@ public class Query {
             int customId = 1001;
 
             if (decision.equals("y") || decision.equals("yes")) {
-                System.out.println("Insert the desired ID for the user");
-                customId = Utilities.ValidatedUserInteger();
+                while(true) {
+                    System.out.println("Insert the desired ID for the user");
+                    customId = Utilities.ValidatedUserInteger();
+                    if (!UserExists(customId)) break;
+                    System.out.println("The user specified already exists");
+                }
             } else {
                 while (UserExists(customId)) {
                     customId++;
@@ -188,9 +190,9 @@ public class Query {
         // Format the current date in desired format
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd_MM_yyyy");
         String formattedDate = currentDate.format(formatter);
-        String filename = Main.PathOf("exports/riviste_" + formattedDate + ".csv");
+        String filename = Utilities.PathOf("exports/riviste_" + formattedDate + ".csv");
         //FIRST CHECK IF THE DIRECTORY EXISTS AND IF NOT, CREATES IT
-        String directoryPath = Main.PathOf("exports");
+        String directoryPath = Utilities.PathOf("exports");
         File directory = new File(directoryPath);
         boolean isDirectoryCreated;
         if (!directory.exists()) isDirectoryCreated = directory.mkdirs();

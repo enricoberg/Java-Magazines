@@ -4,7 +4,7 @@ ID;Nome;Descrizione;Prezzo;Tipologia;Disponibile;Inserimento;Taglia;Marca
 3;Cosmos Explorer;Esplorando i confini dell'universo: articoli su astronomia astrofisica e cosmologia.;30.5;Astronomia;No;2023-08-07;A4;StellarView
 4;NanoTech Visionary;Rivista dedicata alle tecnologie emergenti nel campo della nanotecnologia.;22.75;Tecnologia;Si;2023-07-16;A5;NanoFusion
 5;Earth Sciences Gazette;Approfondimenti sulla geologia l'ambiente e le scienze della terra.;18.99;Scienze della Terra;No;2023-12-05;A5;TerraScope
-6;Genetic Frontier;Ultime ricerche e sviluppi nell'ambito della genetica e della biologia molecolare.;27.0;Biologia;Si;2023-12-11;A5;GenePulse
+6;Genetic Frontier;Ultime ricerche e sviluppi nell'ambito della genetica e della biologia molecolare.;27.0;Biologia;No;2023-12-11;A5;GenePulse
 7;Neural Network Chronicles;Focus sulle reti neurali artificiali e sull'intelligenza artificiale.;23.49;Informatica;Si;2023-11-21;A5;AI Nexus
 8;Astrophysics Almanac;Analisi approfondita dei fenomeni astrofisici più rilevanti.;29.8;Astrofisica;No;2023-08-15;A4;AstroSight
 9;Climate Change Chronicles;Ricerca scientifica e soluzioni riguardo al cambiamento climatico globale.;24.25;Scienze Ambientali;Si;2023-09-21;A4;EcoSphere

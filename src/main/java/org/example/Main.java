@@ -1,7 +1,4 @@
 package org.example;
-
-import java.nio.file.Paths;
-
 import org.example.controller.Controller;
 
 public class Main {
@@ -29,16 +26,5 @@ public class Main {
         while (Controller.control());
     }
 
-    public static String PathOf(String filename) {
-        //GETS THE CSV FROM THE RESOURCES FOLDER IF IN DEVELOPMENT MODE, OTHERWISE SEARCHES IN THE JAR DIRECTORY
-        String className = Main.class.getName().replace('.', '/');
-        String classJar = Main.class.getResource("/" + className + ".class").toString();
-        if (!classJar.startsWith("jar:")) {
-            String resourcePath = "src/main/resources/";
-            resourcePath = resourcePath + filename;
-            resourcePath = Paths.get(System.getProperty("user.dir"), resourcePath).normalize().toString();
-            return resourcePath;
-        }
-        return filename;
-    }
+
 }

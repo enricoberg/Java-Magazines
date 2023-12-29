@@ -3,14 +3,12 @@ import java.time.LocalDate;
 import java.io.FileReader;
 import com.opencsv.*;
 import java.util.ArrayList;
-import java.io.BufferedWriter;
-import java.io.FileWriter;
 import java.io.IOException;
-import org.example.Main;
+import org.example.utilities.Utilities;
 
 public class ReadAbbonamento {
     public ArrayList<Abbonamento> abbonamentoList = new ArrayList<>();
-    private String filename= Main.PathOf("abbonamenti.csv");
+    private String filename= Utilities.PathOf("abbonamenti.csv");
 
     public ReadAbbonamento(){
 
@@ -26,7 +24,7 @@ public class ReadAbbonamento {
                     isFirstLine = false;
                     continue; // Skip the first line (headers)
                 }
-                if (nextLine.length >= 5) { // Ensure the line has at least 5 values
+                if (nextLine.length >= 5) {
 
                     int ID = Integer.parseInt(nextLine[0]);
                     int ID_rivista = Integer.parseInt(nextLine[1]);
@@ -41,7 +39,7 @@ public class ReadAbbonamento {
 
                 }
             }
-            //System.out.println("Abbonamenti.csv read correctly");
+            reader.close();
 
         }
         catch (Exception e)
@@ -63,11 +61,12 @@ public class ReadAbbonamento {
             String newLine= "\n"+ abb.getId_abbonamento() + ";" + abb.getId_rivista() + ";" + abb.getId_utente() + ";" + abb.getData_inizio().toString() +";" + abb.getData_fine().toString();
             file_content+=newLine;
         }
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filename))) {
-            writer.write(file_content);
+        try{
+            Utilities.write(file_content,filename);
             return true;
-        } catch (IOException e) {
-            //e.printStackTrace();
+        }
+        catch(IOException e){
+            e.printStackTrace();
             return false;
         }
     }
